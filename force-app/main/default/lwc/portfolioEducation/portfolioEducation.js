@@ -2,9 +2,9 @@ import { LightningElement, wire, api } from 'lwc';
 import { getRelatedListRecords } from 'lightning/uiRelatedListApi';
 
 const COLUMNS = [
-    { label: 'Education', fieldName: 'Education' },
+    { label: 'Degree', fieldName: 'Education' },
     { label: 'Institution Name', fieldName: 'InstitutionName' },
-    { label: 'Passing Year', fieldName: 'PassingYear' },
+    { label: 'Graduation Year', fieldName: 'PassingYear' },
     
 ];
 export default class PortfolioEducation extends LightningElement {

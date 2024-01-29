@@ -25,9 +25,10 @@ export default class BmiCalculator extends LightningElement {
   }
 
   calculate(){
-    //BMI = weight in KG / (height in m * height in m)
-    let height = Number(this.height)/100;
-    let bmi = Number(this.weight) /(height*height);
+    //BMI = (weight in pounds / (height in inches * height in inches)) * 703
+    let height = Number(this.height);
+    let weight = Number(this.weight);
+    let bmi = (weight /(height*height)) * 703;
     
     this.bmiValue = Number(bmi.toFixed(2))
 

@@ -4,7 +4,7 @@ img{
 }
 .cert-box{
     padding: 12px;
-    background: #bbac7e;
+    background: #7593af;
     font-size: 20px;
     border-radius: 5px;
     display: flex;
@@ -12,13 +12,13 @@ img{
     justify-content: left;
 }
 h2{
-    background: #16325c;
+    background: #194a7a;
     color: #fff;
     padding: 8px 16px;
     border-radius: 5px;
     font-size: 18px;
 }
 .cert-box:hover{
-    background-color: #d8d8d8;
+    background-color: #d1dbe4;
     cursor: pointer;
 }
