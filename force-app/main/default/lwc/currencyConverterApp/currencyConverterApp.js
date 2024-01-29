@@ -43,6 +43,7 @@ export default class CurrencyConverterApp extends LightningElement {
     try{
       const data = await fetch(API_URL)
       const jsonData = await data.json()
+      // eslint-disable-next-line no-debugger
       debugger;
       // this.result = (Number(this.amount) * jsonData.result).toFixed(2)
       this.result = (Number(this.amount) * jsonData.conversion_rate).toFixed(2)
@@ -51,4 +52,5 @@ export default class CurrencyConverterApp extends LightningElement {
       console.log(error)
       this.error="An error occurred. Please try again..."
     }
+}
 }

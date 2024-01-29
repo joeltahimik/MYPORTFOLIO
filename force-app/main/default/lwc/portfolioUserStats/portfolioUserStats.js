@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-import PortfolioAssets from '@salesforce/resourceUrl/PortfolioAssets'
+import PortAssets from '@salesforce/resourceUrl/PortAssets'
 
 export default class PortfolioUserStats extends LightningElement {
     trailheadRankImg
@@ -10,7 +10,7 @@ export default class PortfolioUserStats extends LightningElement {
 
     renderedCallback(){
         if(this.rank){
-            let url = `${PortfolioAssets}/PortfolioAssets/Ranks/${this.rank}.png`
+            let url = `${PortAssets}/PortAssets/Ranks/${this.rank}.png`
             this.trailheadRankImg = url
         }
     }

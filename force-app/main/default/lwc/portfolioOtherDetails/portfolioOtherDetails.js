@@ -4,28 +4,28 @@ import SUPERBADGE_FIELD from '@salesforce/schema/Portfolio__c.Superbadges__c'
 import AWARDS_FIELD from '@salesforce/schema/Portfolio__c.Awards__c'
 import LANGUAGES_FIELD from '@salesforce/schema/Portfolio__c.Languages__c'
 
-import PortfolioAssets from '@salesforce/resourceUrl/PortfolioAssets'
+import PortAssets from '@salesforce/resourceUrl/PortAssets'
 export default class PortfolioOtherDetails extends LightningElement {
     superbadges=[]
     languages=[]
     awards=[]
-    awardIcon = `${PortfolioAssets}/PortfolioAssets/trophy.png`
-    languageIcon = `${PortfolioAssets}/PortfolioAssets/language.png`
-    badgeIcon = `${PortfolioAssets}/PortfolioAssets/badge.png`
+    awardIcon = `${PortAssets}/PortAssets/trophy.png`
+    languageIcon = `${PortAssets}/PortAssets/language.png`
+    badgeIcon = `${PortAssets}/PortAssets/badge.png`
     @api recordId
     @wire(getRecord, {
         recordId:'$recordId',
         fields:[SUPERBADGE_FIELD, AWARDS_FIELD, LANGUAGES_FIELD]
-    })otherFieldsHandler({data, error}){
+    })otherDetailsHandler({data, error}){
         if(data){
-            console.log("otherFieldsHandler data", JSON.stringify(data))
-            this.formatData(data)
+            console.log("otherDetails data", JSON.stringify(data))
+            this.formatOtherDetails(data)
         }
         if(error){
-            console.error("otherFieldsHandler error", error)
+            console.error("otherDetails error", error)
         }
     }
-    formatData(data){
+    formatOtherDetails(data){
         const {Superbadges__c, Awards__c, Languages__c} = data.fields
         this.superbadges = Superbadges__c && Superbadges__c.value ? Superbadges__c.value.split(';'):[]
         this.awards = Awards__c && Awards__c.value ? Awards__c.value.split(','):[]

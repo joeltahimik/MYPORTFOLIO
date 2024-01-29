@@ -1,6 +1,6 @@
 import { LightningElement, wire, api } from 'lwc';
-import PortfolioAssets from '@salesforce/resourceUrl/PortfolioAssets'
- import {getRecord, getFieldValue} from 'lightning/uiRecordApi'
+import PortAssets from '@salesforce/resourceUrl/PortAssets'
+import {getRecord, getFieldValue} from 'lightning/uiRecordApi'
 import FULLNAME from '@salesforce/schema/Portfolio__c.FullName__c'
 import COMPANY_LOCATION from '@salesforce/schema/Portfolio__c.CompanyLocation__c'
 import COMPANY_NAME from '@salesforce/schema/Portfolio__c.CompanyName__c'
@@ -17,13 +17,13 @@ export default class PortfolioBanner extends LightningElement {
     @api blogUrl //= 'https://www.salesforcetroop.com/'
 
 
-    userPic = `${PortfolioAssets}/PortfolioAssets/userPic.jpeg`
-    linkedin = `${PortfolioAssets}/PortfolioAssets/Social/linkedin.svg`
-    youtube = `${PortfolioAssets}/PortfolioAssets/Social/youtube.svg`
-    github = `${PortfolioAssets}/PortfolioAssets/Social/github.svg`
-    twitter = `${PortfolioAssets}/PortfolioAssets/Social/twitter.svg`
-    trailhead = `${PortfolioAssets}/PortfolioAssets/Social/trailhead1.svg`
-    blog = `${PortfolioAssets}/PortfolioAssets/Social/blogger.svg`
+    userPic = `${PortAssets}/PortAssets/userPic.jpg`
+    linkedin = `${PortAssets}/PortAssets/Social/linkedin.svg`
+    youtube = `${PortAssets}/PortAssets/Social/youtube.svg`
+    github = `${PortAssets}/PortAssets/Social/github.svg`
+    twitter = `${PortAssets}/PortAssets/Social/twitter.svg`
+    trailhead = `${PortAssets}/PortAssets/Social/trailhead1.svg`
+    blog = `${PortAssets}/PortAssets/Social/blogger.svg`
 
     
     @wire(getRecord, {recordId:'$recordId', fields:[FULLNAME,COMPANY_LOCATION,COMPANY_NAME,DESIGNATION]})

@@ -1,12 +1,12 @@
 import { LightningElement, wire, api } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
-import PortfolioAssets from '@salesforce/resourceUrl/PortfolioAssets'
+import PortAssets from '@salesforce/resourceUrl/PortAssets'
 import SF_CERT_FIELDS from '@salesforce/schema/Portfolio__c.SalesforceCertifications__c'
 import OTHER_CERT_FIELDS from '@salesforce/schema/Portfolio__c.OtherCertifications__c'
 export default class PortfolioCertifications extends LightningElement {
     sfCertsList = []
     otherCertsList = []
-    certLogo = `${PortfolioAssets}/PortfolioAssets/cert_logo.png`
+    certLogo = `${PortAssets}/PortAssets/cert_logo.png`
 
     @api recordId
     @wire(getRecord, {
