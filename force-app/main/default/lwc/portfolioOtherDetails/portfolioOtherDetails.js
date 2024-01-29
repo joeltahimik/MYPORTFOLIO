@@ -26,9 +26,10 @@ export default class PortfolioOtherDetails extends LightningElement {
         }
     }
     formatData(data){
-        const {Awards__c, Languages__c, Superbadges__c} = data.fields
+        const {Superbadges__c, Awards__c, Languages__c} = data.fields
+        this.superbadges = Superbadges__c && Superbadges__c.value ? Superbadges__c.value.split(';'):[]
         this.awards = Awards__c && Awards__c.value ? Awards__c.value.split(','):[]
         this.languages = Languages__c && Languages__c.value ? Languages__c.value.split(','):[]
-        this.superbadges = Superbadges__c && Superbadges__c.value ? Superbadges__c.value.split(';'):[]
+        
     }
 }
