@@ -38,7 +38,7 @@ export default class CurrencyConverterApp extends LightningElement {
 
   async convert(){
     // const API_URL = `https://api.exchangerate.host/convert?access_key=${AUTH_KEY}&from=${this.countryFrom}&to=${this.countryTo}`
-    const API_KEY = '2903e01d3e832b9895b61783'
+    const API_KEY = ''
     const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${this.countryFrom}/${this.countryTo}`
     try{
       const data = await fetch(API_URL)
